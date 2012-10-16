@@ -1,3 +1,9 @@
+python-tornado (2.4) UNRELEASED; urgency=low
+
+  * Tornado 2.4 release
+
+ -- Serge S. Koval <serge.koval@gmail.com>  Tue, 16 Oct 2012 03:48:50 -0400
+
 python-tornado (2.3-2) unstable; urgency=low
 
   * debian/control
