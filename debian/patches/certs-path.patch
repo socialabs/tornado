@@ -1,0 +1,17 @@
+Description: Looks for ca-certificates.crt at the good Debian location before trying local path
+Author: Carl Chenet <chaica@ohmytux.com>
+
+--- a/tornado/simple_httpclient.py
++++ b/tornado/simple_httpclient.py
+@@ -32,7 +32,10 @@
+ except ImportError:
+     ssl = None
+ 
+-_DEFAULT_CA_CERTS = os.path.dirname(__file__) + '/ca-certificates.crt'
++if os.path.exists('/etc/ssl/certs/ca-certificates.crt'):
++    _DEFAULT_CA_CERTS = '/etc/ssl/certs/ca-certificates.crt'
++else:
++    _DEFAULT_CA_CERTS = os.path.dirname(__file__) + '/ca-certificates.crt'
+ 
+ 
+ class SimpleAsyncHTTPClient(AsyncHTTPClient):

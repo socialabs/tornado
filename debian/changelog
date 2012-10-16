@@ -1,0 +1,111 @@
+python-tornado (2.3-2) unstable; urgency=low
+
+  * debian/control
+    - Replaced the python3.2 in the Depends field of python3-tornado
+      by $(python3:Depends)
+  * Renamed python-tornado.examples to examples
+  * Removed python3-tornado.examples
+
+ -- Carl Chenet <chaica@debian.org>  Sun, 10 Jun 2012 01:26:50 +0200
+
+python-tornado (2.3-1) unstable; urgency=low
+
+  [ Julian Taylor ]
+  * Team upload
+  * new upstream release
+    - change debian/watch to download section instead of tag tarballs
+      tag tarball contain lots of unnecessary website and test data
+    - drop upstream applied CVE-2012-2374.patch
+    - refresh patches
+    - closes LP: #998615
+  [ Carl Chenet]
+  * debian/control
+    - Replaced chaica@ohmytux.com by chaica@debian.org
+    - Replace (python3:Depends) in python3-tornado Depends field
+      because of https://github.com/facebook/tornado/issues/450
+    - Modified the short description of python3-tornado package
+  * Renamed examples to python-tornado.examples
+  * Added python3-tornado.examples
+
+ -- Carl Chenet <chaica@debian.org>  Sun, 10 Jun 2012 00:12:24 +0200
+
+python-tornado (2.1.0-3) unstable; urgency=high
+
+  [ Julian Taylor ]
+  * Team upload
+  * bump X-Python-Version to >= 2.6
+    lower versions require arch any for custom epoll extension
+  * move to Section: web (Closes: #665854)
+    - override lintian wrong-section-according-to-package-name
+  * CVE-2012-2374.patch adopted from upstream's GIT (Closes: #673987)
+
+ -- Yaroslav Halchenko <debian@onerussian.com>  Tue, 22 May 2012 19:11:51 -0400
+
+python-tornado (2.1.0-2) unstable; urgency=low
+
+  [ Thomas Kluyver ]
+  * Package for Python 3 (Closes: #653643)
+
+  [ Julian Taylor ]
+  * make packages arch all
+  * debian/control
+    - wrap-and-sort fields
+  * remove unnecessary Dependencies and Breaks
+  * convert copyright to dep5
+  * bump standard to 3.9.3 (no changes)
+
+ -- Yaroslav Halchenko <debian@onerussian.com>  Tue, 13 Mar 2012 18:08:33 -0400
+
+python-tornado (2.1.0-1) unstable; urgency=low
+
+  * Team upload
+  * New upstream release (Closes: #636602)
+  * Refreshed patches
+  * Updated debian/copyright
+  * Added myself to uploaders to have bugs closed with uploads
+
+ -- Yaroslav Halchenko <debian@onerussian.com>  Wed, 21 Sep 2011 19:58:11 -0400
+
+python-tornado (1.2.1-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control
+    - Bump Standards-Version to 3.9.2
+
+ -- Carl Chenet <chaica@ohmytux.com>  Mon, 09 May 2011 16:56:04 +0200
+
+python-tornado (1.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added debian/examples
+  * Added patch to ignore ca-certificates.crt from sources
+  * Added patch to look for ca-certificates.crt at the right place
+  * debian/copyright
+    - Added copyrights and license for some files
+    - some files no more in the upstream sources
+  * debian/control
+    - Removed python-support
+    - Replaced XS-Python-Version by X-Python-Version
+    - Added Breaks: ${python:Breaks}
+    - Added Recommends: python (>= 2.6) | python-multiprocessing
+    - Added Depends: ca-certificates
+  * debian/rules
+    - Replaced dh $@ by dh $@ --with python2
+  * debian/watch
+    - fixed the path
+
+ -- Carl Chenet <chaica@ohmytux.com>  Tue, 01 Mar 2011 02:38:06 +0100
+
+python-tornado (1.0.1-1) unstable; urgency=low
+
+  * Team upload
+  * New upstream release
+  * Standards-Version bumped to 3.9.1 (no changes needed)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sun, 22 Aug 2010 15:14:57 +0200
+
+python-tornado (0.2-1) unstable; urgency=low
+
+  * Initial release. (Closes: #551520)
+
+ -- Carl Chenet <chaica@ohmytux.com>  Sat, 20 Mar 2010 17:38:45 +0100

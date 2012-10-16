@@ -1,0 +1,14 @@
+Description: Remove the ca-certificate file from being added to the package
+Author: Carl Chenet <chaica@ohmytux.com>
+
+--- a/setup.py
++++ b/setup.py
+@@ -44,7 +44,7 @@
+     version=version,
+     packages = ["tornado", "tornado.test", "tornado.platform"],
+     package_data = {
+-        "tornado": ["ca-certificates.crt"],
++        #"tornado": ["ca-certificates.crt"],
+         "tornado.test": ["README", "test.crt", "test.key", "static/robots.txt",
+                          "templates/utf8.html"],
+         },
